@@ -1,15 +1,16 @@
-
 # The CEO's Odyssey
 
 **A Strategic Management Simulation**
 
 > *Developed for the Aalto University MBA Strategic Management Module — November 2025.*
 
+![The CEO's Odyssey](images/startscreen.png)
+
 ## Overview
 
 **The CEO's Odyssey** is a retro-style platformer game that gamifies the complex decision-making processes faced by modern executives. Built as an experiential learning tool for the Strategic Management module, players assume the role of a newly appointed CEO (Pedro or Sandra) navigating the treacherous landscape of corporate leadership.
 
-The game combines traditional platforming mechanics (jumping, moving, avoiding obstacles) with high-stakes strategic scenarios generated and adjudicated by **Google's Gemini AI**.
+The game combines traditional platforming mechanics (jumping, moving, avoiding obstacles) with high-stakes strategic scenarios.
 
 ## Context & Learning Objectives
 
@@ -33,14 +34,8 @@ This application was developed by Sandra Calvo in response to the final assessme
 3.  **Make Decisions:** Enter doors to face Board-level scenarios. Your choices affect your **Board Trust** score.
 4.  **Survive:** Maintain Board Trust above 35% to avoid termination. Aim for >70% for a contract renewal.
 
-## Why is the Gemini API Key Required?
 
-The Gemini API key is used to power the **AI Game Master** logic within the application (`services/geminiService.ts`). Specifically, it serves two critical purposes in the game's architecture:
-
-1.  **Dynamic Storytelling & Fallback:** The game is designed so that if a scenario option does not have a pre-written, hardcoded outcome, the application calls the Gemini API to generate a cynical, corporate-styled status update on the fly. This acts as a fallback system and allows for "infinite" procedural scenarios in future versions.
-2.  **Atmosphere & Tone:** The prompts sent to Gemini are engineered to maintain the specific "retro video game" and "corporate satire" tone. This ensures that any AI-generated text seamlessly matches the game's unique voice (e.g., "The Board is concerned by your indecisiveness").
-
-*Note: In this specific MBA module version, standard outcomes are hardcoded to ensure specific strategic lessons are conveyed accurately, but the AI infrastructure remains active to handle exceptions and dynamic content.*
+![Level1](images/level1.png)
 
 ## Technical Stack
 
@@ -48,6 +43,17 @@ The Gemini API key is used to power the **AI Game Master** logic within the appl
 *   **Styling:** Tailwind CSS
 *   **AI Integration:** Google Gemini API (via `@google/genai`)
 *   **Assets:** Procedural SVG generation (No external image assets required)
+
+
+## Does this game use AI?
+
+The Gemini API key is used to power the **AI Game Master** logic within the application (`services/geminiService.ts`). Specifically, it serves two critical purposes in the game's architecture:
+
+1.  **Dynamic Storytelling & Fallback:** The game is designed so that if a scenario option does not have a pre-written, hardcoded outcome, the application calls the Gemini API to generate a cynical, corporate-styled status update on the fly. This acts as a fallback system and allows for "infinite" procedural scenarios in future versions.
+2.  **Atmosphere & Tone:** The prompts sent to Gemini are engineered to maintain the specific "retro video game" and "corporate satire" tone. This ensures that any AI-generated text seamlessly matches the game's unique voice (e.g., "The Board is concerned by your indecisiveness").
+
+*Note: In this specific game version, standard outcomes are hardcoded to ensure specific strategic lessons are conveyed accurately, but the AI infrastructure remains active to handle exceptions and dynamic content.*
+
 
 ## Setup & Installation
 
@@ -85,4 +91,4 @@ To build and run the game containerized:
 3.  Access the game at `http://localhost:8080`.
 
 ---
-*© 2025 Sandra Calvo | Aalto University MBA*
+*© 2025 Sandra Calvo | Aalto University Executive Education MBA*
